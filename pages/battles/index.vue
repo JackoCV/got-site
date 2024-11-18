@@ -10,7 +10,7 @@
   import axios from 'axios';
   import BattleList from '~/components/BattleList.vue';
   import SearchBar from '~/components/SearchBar.vue';
-  import Navbar from '@/components/NavBar.vue';
+  import Navbar from '@/components/Navbar.vue';
 
 
   export default {

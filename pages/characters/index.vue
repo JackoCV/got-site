@@ -10,7 +10,7 @@
 import axios from 'axios';
 import SearchBar from '~/components/SearchBar.vue';
 import CharacterList from '~/components/CharacterList.vue';
-import Navbar from '@/components/NavBar.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
   components: {

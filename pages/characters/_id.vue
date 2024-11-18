@@ -62,7 +62,7 @@
 
 <script>
 import axios from 'axios';
-import Navbar from '@/components/NavBar.vue';
+import Navbar from '@/components/Navbar.vue';
 import CharacterList from '~/components/CharacterList.vue';
 
 export default {
