@@ -1,4 +1,11 @@
 # got-site
+Proyecto 3 de Arquitectura
+
+Jacksem Cortes
+Caleb Sanchez
+
+Link del hosting: https://proyecto3arqui-jacksem-y-caleb.netlify.app/
+
 
 ## Build Setup
 
