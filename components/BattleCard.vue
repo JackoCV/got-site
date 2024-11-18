@@ -1,19 +1,22 @@
 <template>
   <div>
-    <router-link v-if="battle.battleLink" :to="battle.battleLink">
-      <div class="battle-card">
-        <h3>{{ battle.name }}</h3>
-        <p><strong>Year:</strong> {{ battle.year }}</p>
-        <p><strong>Region:</strong> {{ battle.region }}</p>
-        <p><strong>Location:</strong> {{ battle.location }}</p>
-        <!-- Puedes agregar más propiedades aquí según lo que hay en el archivo JSON -->
+    <router-link v-if="battle.battleLink" :to="battle.battleLink" class="text-decoration-none">
+      <div class="card text-center shadow-sm mb-3">
+        <div class="card-body">
+          <h3 class="card-title h5">{{ battle.name }}</h3>
+          <p class="card-text"><strong>Year:</strong> {{ battle.year }}</p>
+          <p class="card-text"><strong>Region:</strong> {{ battle.region }}</p>
+          <p class="card-text"><strong>Location:</strong> {{ battle.location }}</p>
+        </div>
       </div>
     </router-link>
-    <div v-else class="battle-card">
-      <h3>{{ battle.name }}</h3>
-      <p><strong>Year:</strong> {{ battle.year }}</p>
-      <p><strong>Region:</strong> {{ battle.region }}</p>
-      <p><strong>Location:</strong> {{ battle.location }}</p>
+    <div v-else class="card text-center shadow-sm mb-3">
+      <div class="card-body">
+        <h3 class="card-title h5">{{ battle.name }}</h3>
+        <p class="card-text"><strong>Year:</strong> {{ battle.year }}</p>
+        <p class="card-text"><strong>Region:</strong> {{ battle.region }}</p>
+        <p class="card-text"><strong>Location:</strong> {{ battle.location }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -30,17 +33,22 @@ export default {
 </script>
 
 <style scoped>
-.battle-card {
-  background: #f8f8f8;
-  border-radius: 8px;
-  padding: 1.5rem;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: box-shadow 0.3s ease;
+/* Personalización adicional para las tarjetas */
+.card {
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.battle-card:hover {
+.card:hover {
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #333;
+}
+
+.card-text {
+  color: #555;
 }
 </style>

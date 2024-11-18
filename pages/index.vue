@@ -4,28 +4,17 @@
     <NavBar />
 
     <!-- Acceso Rápido a las Diferentes Secciones -->
-    <section class="quick-links">
-      <h2>Explore the World of Game of Thrones</h2>
-      <div class="links">
-        <NuxtLink to="/characters" class="link-card">
-          <h3>Characters</h3>
-          <p>Meet the most iconic characters from Game of Thrones.</p>
-        </NuxtLink>
-        
-        <NuxtLink to="/houses" class="link-card">
-          <h3>Houses</h3>
-          <p>Discover the noble houses of Westeros.</p>
-        </NuxtLink>
-        
-        <NuxtLink to="/battles" class="link-card">
-          <h3>Battles</h3>
-          <p>Learn about the legendary battles fought in the realm.</p>
-        </NuxtLink>
-        
-        <NuxtLink to="/episodes" class="link-card">
-          <h3>Episodes</h3>
-          <p>Explore episodes from all seasons of the series.</p>
-        </NuxtLink>
+    <section class="quick-links container text-center mt-5">
+      <h2 class="display-5 mb-4">Explore the World of Game of Thrones</h2>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4" v-for="link in links" :key="link.path">
+          <NuxtLink :to="link.path" class="card text-decoration-none shadow-sm h-100">
+            <div class="card-body">
+              <h3 class="card-title h5">{{ link.title }}</h3>
+              <p class="card-text">{{ link.description }}</p>
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     </section>
   </div>
@@ -39,37 +28,44 @@ export default {
   components: {
     NavBar,
   },
+  data() {
+    return {
+      links: [
+        {
+          path: '/characters',
+          title: 'Characters',
+          description: 'Meet the most iconic characters from Game of Thrones.',
+        },
+        {
+          path: '/houses',
+          title: 'Houses',
+          description: 'Discover the noble houses of Westeros.',
+        },
+        {
+          path: '/battles',
+          title: 'Battles',
+          description: 'Learn about the legendary battles fought in the realm.',
+        },
+        {
+          path: '/episodes',
+          title: 'Episodes',
+          description: 'Explore episodes from all seasons of the series.',
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style scoped>
-/* Estilos para la página principal */
-
-.quick-links {
-  padding: 2rem;
-  text-align: center;
+/* Personaliza estilos aquí si es necesario */
+.card {
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.link-card {
-  background: #f8f8f8;
-  border-radius: 8px;
-  padding: 1.5rem;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: #333;
-  transition: box-shadow 0.3s ease;
-}
-
-.link-card:hover {
+.card:hover {
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 </style>

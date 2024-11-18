@@ -1,36 +1,29 @@
 <template>
-    <div class="house-list">
-      <HouseCard
-        v-for="house in houses"
-        :key="house.houseLink"
-        :house="house"
-      />
+  <div class="container mt-4">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6" v-for="house in houses" :key="house.houseLink">
+        <HouseCard :house="house" />
+      </div>
     </div>
-  </template>
-  
-  <script>
-  import HouseCard from './HouseCard.vue';
-  
-  export default {
-    props: {
-      houses: {
-        type: Array,
-        required: true,
-      },
+  </div>
+</template>
+
+<script>
+import HouseCard from './HouseCard.vue';
+
+export default {
+  props: {
+    houses: {
+      type: Array,
+      required: true,
     },
-    components: {
-      HouseCard,
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .house-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-  </style>
-  
+  },
+  components: {
+    HouseCard,
+  },
+};
+</script>
+
+<style scoped>
+/* Personalización adicional si es necesario */
+</style>

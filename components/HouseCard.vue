@@ -1,9 +1,11 @@
 <template>
   <div>
-    <router-link :to="houseLink">
-      <div class="house-card">
-        <h3>{{ house.House_name }}</h3>
-        <p>{{ house.Region }}</p>
+    <router-link :to="houseLink" class="text-decoration-none">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h3 class="card-title h5">{{ house.House_name }}</h3>
+          <p class="card-text">{{ house.Region }}</p>
+        </div>
       </div>
     </router-link>
   </div>
@@ -27,17 +29,22 @@ export default {
 </script>
 
 <style scoped>
-.house-card {
-  background: #f8f8f8;
-  border-radius: 8px;
-  padding: 1.5rem;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: box-shadow 0.3s ease;
+/* Personalización adicional */
+.card {
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.house-card:hover {
+.card:hover {
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #333;
+}
+
+.card-text {
+  color: #555;
 }
 </style>

@@ -1,21 +1,28 @@
 <template>
     <div>
-      <h1>Game of Thrones Battles</h1>
-      <BattleList :battles="battles" />
+      <NavBar />
+      <SearchBar @search="handleSearch" />
+      <BattleList :battles="filteredBattles" />
     </div>
   </template>
   
   <script>
   import axios from 'axios';
   import BattleList from '~/components/BattleList.vue';
-  
+  import SearchBar from '~/components/SearchBar.vue';
+  import NavBar from '~/components/NavBar.vue';
+
+
   export default {
     components: {
       BattleList,
+      SearchBar,
+      NavBar,
     },
     data() {
       return {
         battles: [],
+        filteredBattles: [],
       };
     },
     async fetch() {
@@ -24,12 +31,22 @@
         const response = await axios.get('/battles/battles.json');
         this.battles = response.data.map((battle, index) => ({
           ...battle,
-          battleLink: `/battles/${index}`, // Agregar un enlace dinámico a cada batalla
+          battleLink: `/battles/${battle.name.replace(/\s+/g, '-')}`, // Agregar un enlace dinámico a cada batalla
         }));
+        this.filteredBattles = this.battles;
       } catch (error) {
         console.error('Error loading battles:', error);
       }
     },
+    methods: {
+      handleSearch(query) {
+        // Filtrar los personajes según el término de búsqueda
+        this.filteredBattles = this.battles.filter((battle) =>
+        battle.name.toLowerCase().includes(query.toLowerCase())
+        );
+      },
+    },
+
   };
   </script>
   

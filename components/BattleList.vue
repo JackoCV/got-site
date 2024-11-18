@@ -1,10 +1,10 @@
 <template>
-  <div class="battle-list">
-    <BattleCard
-      v-for="battle in battles"
-      :key="battle.battleLink"
-      :battle="battle"
-    />
+  <div class="container mt-4">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6" v-for="battle in battles" :key="battle.battleLink">
+        <BattleCard :battle="battle" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,11 +25,5 @@ export default {
 </script>
 
 <style scoped>
-.battle-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
+/* Personalización adicional si es necesario */
 </style>
