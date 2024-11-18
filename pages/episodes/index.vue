@@ -11,7 +11,7 @@
 import axios from 'axios';
 import SearchBar from '~/components/SearchBar.vue';
 import EpisodeList from '~/components/EpisodeList.vue';
-import NavBar from '~/components/NavBar.vue';
+import Navbar from '@/components/NavBar.vue';
 
 export default {
   components: {

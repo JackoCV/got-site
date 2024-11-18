@@ -16,7 +16,7 @@
 <script>
 import axios from 'axios';
 import CharacterList from '~/components/CharacterList.vue';
-import NavBar from '~/components/NavBar.vue';
+import Navbar from '@/components/NavBar.vue';
 
 export default {
   components: {

@@ -48,7 +48,7 @@
 
 <script>
 import axios from 'axios';
-import NavBar from '~/components/NavBar.vue';
+import Navbar from '@/components/NavBar.vue';
 
 
 export default {
