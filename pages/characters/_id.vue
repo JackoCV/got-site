@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <Navbar />
 
     <div v-if="character" class="container mt-4">
       <div class="text-center">
@@ -67,7 +67,7 @@ import CharacterList from '~/components/CharacterList.vue';
 
 export default {
   components: {
-    NavBar,
+    Navbar,
     CharacterList
   },
   data() {

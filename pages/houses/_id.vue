@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <Navbar />
    
     <div v-if="house">
       <h1>{{ house.House_name }}</h1>
@@ -21,7 +21,7 @@ import Navbar from '@/components/Navbar.vue';
 export default {
   components: {
     CharacterList,
-    NavBar,
+    Navbar,
   },
   data() {
     return {

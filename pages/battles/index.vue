@@ -1,6 +1,6 @@
 <template>
     <div>
-      <NavBar />
+      <Navbar />
       <SearchBar @search="handleSearch" />
       <BattleList :battles="filteredBattles" />
     </div>
@@ -17,7 +17,7 @@
     components: {
       BattleList,
       SearchBar,
-      NavBar,
+      Navbar,
     },
     data() {
       return {

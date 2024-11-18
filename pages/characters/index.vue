@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <Navbar />
     <SearchBar @search="handleSearch" />
     <CharacterList :characters="filteredCharacters" />
   </div>
@@ -16,7 +16,7 @@ export default {
   components: {
     SearchBar,
     CharacterList,
-    NavBar
+    Navbar
   },
   data() {
     return {

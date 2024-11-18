@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavBar />
+        <Navbar />
 
         <div class="container mt-4">
             <h1 class="display-4 text-center">Episodes</h1>
@@ -53,7 +53,7 @@ import Navbar from '@/components/Navbar.vue';
 
 export default {
     components: {
-        NavBar,
+        Navbar,
     },
     data() {
         return {

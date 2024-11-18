@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <NavBar />
+    <Navbar />
     <SearchBar @search="handleSearch" />
     <EpisodeList :episodes="filteredepisodes" />
   </div>
@@ -17,7 +17,7 @@ export default {
   components: {
     SearchBar,
     EpisodeList,
-    NavBar
+    Navbar
   },
   data() {
     return {

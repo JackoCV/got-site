@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Barra de Navegación Global -->
-    <NavBar />
+    <Navbar />
 
     <!-- Acceso Rápido a las Diferentes Secciones -->
     <section class="quick-links container text-center mt-5">

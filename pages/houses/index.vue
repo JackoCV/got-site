@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <Navbar />
     <SearchBar @search="handleSearch" />
     <HouseList :houses="filteredHouses" />
     
@@ -17,7 +17,7 @@ export default {
   components: {
     HouseList,
     SearchBar,
-    NavBar,
+    Navbar,
   },
   data() {
     return {

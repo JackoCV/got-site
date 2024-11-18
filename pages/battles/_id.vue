@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Barra de navegación -->
-    <NavBar />
+    <Navbar />
 
     <div v-if="battle" class="container mt-4">
       <!-- Título y detalles principales -->
@@ -47,7 +47,7 @@ import CharacterList from '~/components/CharacterList.vue';
 
 export default {
   components: {
-    NavBar,
+    Navbar,
     CharacterList,
   },
   data() {
