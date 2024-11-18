@@ -3,7 +3,6 @@
     <Navbar />
     <SearchBar @search="handleSearch" />
     <HouseList :houses="filteredHouses" />
-    
   </div>
 </template>
 
@@ -36,10 +35,12 @@ export default {
   },
   methods: {
     handleSearch(query) {
-      // Filtrar los personajes según el término de búsqueda
-      this.filteredHouses = this.houses.filter((house) =>
-        house.House_name.toLowerCase().includes(query.toLowerCase())
-      );
+      console.log("Search query:", query); // Para verificar que se reciba el valor de búsqueda
+      // Filtrar las casas según el término de búsqueda
+      this.filteredHouses = this.houses.filter((house) => {
+        const houseName = house.House_name || ''; // Asegura que houseName sea una cadena vacía si es undefined
+        return houseName.toLowerCase().includes(query.toLowerCase());
+      });
     },
   },
 };

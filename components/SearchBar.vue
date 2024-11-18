@@ -22,12 +22,12 @@ export default {
   },
   methods: {
     emitSearch() {
-      this.$emit('search', this.query);
+      if (this.query) {
+        this.$emit('search', this.query);
+      } else {
+        console.log("Search query is empty"); // Log para verificar si el botón fue presionado sin valor
+      }
     },
   },
 };
 </script>
-
-<style scoped>
-/* Personalización adicional si es necesario */
-</style>

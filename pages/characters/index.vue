@@ -36,14 +36,15 @@ export default {
     } catch (error) {
       console.error('Error loading characters:', error);
     }
-  }
-  ,
+  },
   methods: {
     handleSearch(query) {
+      console.log("Search query:", query); // Para verificar que se reciba el valor de búsqueda
       // Filtrar los personajes según el término de búsqueda
-      this.filteredCharacters = this.characters.filter((character) =>
-        character.name.toLowerCase().includes(query.toLowerCase())
-      );
+      this.filteredCharacters = this.characters.filter((character) => {
+        const characterName = characterName  || ''; // Asegura que characterName sea una cadena vacía si es undefined
+        return characterName.toLowerCase().includes(query.toLowerCase());
+      });
     },
   },
 };
